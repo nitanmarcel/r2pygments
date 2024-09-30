@@ -5,22 +5,23 @@ from pygments.token import *
 class R2GentooStyle(Style):
     name = 'r2gentoo'
     background_color = "cyan"
+    highlight_color = "#101010"
     styles = {
         Comment: 'cyan',
+        Comment.Special: 'cyan',
         Name.Function: 'green',
         Name.Constant: 'green',
         Name.Label: 'yellow',
         Generic.Emph: 'cyan',
-        Generic.Emph: 'cyan',
         Generic.Prompt: 'green',
-        Name.Label: 'yellow',
-        Name.Function: 'green',
-        Keyword: '#009000',
-        Keyword: '#009000',
-        Keyword: '#009000',
-        Name.Variable: '#f0f0f0',
+        Text: '#c0c0c0',
+        Keyword: 'cyan',
+        Name.Variable: 'white',
         Number: 'yellow',
-        Name.Variable: 'white',
         Keyword.Type: 'yellow',
-        Name.Variable: 'white',
+        Generic: '#3030f0',
+        Generic.Inserted: '#30f030',
+        Generic.Deleted: '#f03030',
+        Generic.Strong: '#f03030',
+        Generic.Traceback: '#f00000',
     }

@@ -5,22 +5,23 @@ from pygments.token import *
 class R2TangoStyle(Style):
     name = 'r2tango'
     background_color = "#bb5"
+    highlight_color = "#004"
     styles = {
-        Name.Function: '#7d1',
-        Keyword: '#370',
-        Keyword: '#370',
-        Keyword: '#370',
-        Comment: '#370',
-        Generic.Emph: '#248',
         Name.Function: '#ca0',
-        Name.Label: '#c50',
-        Number: '#ca0',
-        Name.Label: '#bbb',
-        Generic.Prompt: '#950',
-        Name.Variable: '#c50',
+        Keyword: '#950',
+        Comment: '#370',
+        Comment.Special: '#7d1',
         Generic.Emph: '#ddd',
+        Name.Label: '#bbb',
+        Number: '#ca0',
+        Text: '#950',
+        Generic.Prompt: '#950',
+        Name.Variable: '#370',
         Name.Constant: '#950',
-        Name.Variable: '#370',
+        Generic.Inserted: '#370',
+        Generic.Deleted: '#a00',
+        Generic: '#950',
+        Generic.Strong: '#7d1',
+        Generic.Traceback: '#f00',
         Keyword.Type: '#a41',
-        Name.Variable: '#370',
     }

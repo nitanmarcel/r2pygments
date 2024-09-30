@@ -5,22 +5,23 @@ from pygments.token import *
 class R2ChromeStyle(Style):
     name = 'r2chrome'
     background_color = "#fff"
+    highlight_color = "#111"
     styles = {
-        Name.Function: 'white',
-        Keyword: 'white',
+        Name.Function: '#fff',
+        Keyword: '#fff',
         Comment: 'white',
+        Comment.Special: '#333',
         Name.Variable: '#fff',
         Name.Constant: '#fff',
         Generic.Emph: '#fff',
-        Name.Function: '#fff',
-        Generic.Emph: '#fff',
-        Keyword: '#fff',
-        Name.Label: '#fff',
-        Number: '#fff',
         Name.Label: '#555',
+        Number: '#fff',
+        Text: '#999',
         Generic.Prompt: '#fff',
-        Keyword: '#fff',
-        Name.Variable: '#fff',
+        Generic.Inserted: '#fff',
+        Generic.Deleted: '#777',
+        Generic: '#fff',
+        Generic.Strong: '#fff',
+        Generic.Traceback: '#f00',
         Keyword.Type: '#777',
-        Name.Variable: '#fff',
     }

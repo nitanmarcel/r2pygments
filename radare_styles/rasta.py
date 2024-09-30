@@ -5,22 +5,23 @@ from pygments.token import *
 class R2RastaStyle(Style):
     name = 'r2rasta'
     background_color = "yellow"
+    highlight_color = "#008"
     styles = {
         Comment: 'green',
-        Name.Function: 'yellow',
+        Comment.Special: 'yellow',
+        Name.Function: 'red',
         Name.Constant: 'yellow',
         Name.Label: 'yellow',
-        Generic.Emph: 'green',
+        Generic.Emph: 'yellow',
         Generic.Prompt: 'green',
-        Name.Label: 'yellow',
-        Keyword: 'red',
-        Keyword: 'red',
-        Keyword: 'red',
-        Name.Function: 'red',
+        Text: 'green',
+        Keyword: 'yellow',
         Name.Variable: 'green',
         Number: 'red',
-        Generic.Emph: 'yellow',
-        Name.Variable: 'green',
+        Generic: 'green',
+        Generic.Inserted: 'green',
+        Generic.Deleted: 'red',
+        Generic.Strong: 'green',
+        Generic.Traceback: 'yellow',
         Keyword.Type: 'red',
-        Name.Variable: 'green',
     }

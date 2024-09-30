@@ -5,22 +5,23 @@ from pygments.token import *
 class R2SepiaStyle(Style):
     name = 'r2sepia'
     background_color = "#db7"
+    highlight_color = "#210"
     styles = {
-        Name.Function: '#ffffff',
-        Keyword: '#fec',
-        Keyword: '#fec',
-        Keyword: '#fec',
-        Comment: '#fd9',
-        Generic.Emph: '#ca6',
+        Text: '#ba6',
         Name.Function: '#bb7',
-        Name.Label: '#788',
-        Number: '#960',
-        Name.Label: '#960',
-        Generic.Prompt: '#960',
-        Name.Variable: '#ca6',
+        Keyword: '#bb7',
+        Comment: '#fd9',
+        Comment.Special: '#fff',
         Generic.Emph: '#ab7',
+        Name.Label: '#960',
+        Number: '#960',
+        Generic.Prompt: '#960',
+        Name.Variable: '#fd9',
         Name.Constant: '#ffd',
-        Name.Variable: '#fd9',
+        Generic.Inserted: '#fd9',
+        Generic.Deleted: '#431',
+        Generic: '#431',
+        Generic.Strong: '#0000ff',
+        Generic.Traceback: '#0000ff',
         Keyword.Type: '#850',
-        Name.Variable: '#fd9',
     }

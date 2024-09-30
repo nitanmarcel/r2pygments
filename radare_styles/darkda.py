@@ -5,22 +5,22 @@ from pygments.token import *
 class R2DarkdaStyle(Style):
     name = 'r2darkda'
     background_color = "#099"
+    highlight_color = "#00007f"
     styles = {
-        Name.Function: '#ffd200',
-        Keyword: '#9dd600',
-        Keyword: '#9dd600',
-        Comment: '#82607e',
-        Number: '#d25032',
-        Generic.Emph: '#00b1ab',
+        Text: '#ff7f00',
         Name.Function: '#00ffff',
-        Name.Label: '#66d9ef',
+        Keyword: '#df077e',
+        Comment: '#82607e',
+        Comment.Special: '#f3c5ff',
+        Number: '#d25032',
+        Generic.Emph: '#009d9d',
         Name.Label: '#ababab',
         Generic.Prompt: '#fc0',
-        Name.Variable: '#009d9d',
-        Generic.Emph: '#009d9d',
-        Keyword: '#9dd600',
+        Name.Variable: '#99a',
         Name.Constant: '#00b1ab',
-        Name.Variable: '#99a',
+        Generic: '#0043cb',
+        Generic.Inserted: '#009100',
+        Generic.Deleted: '#bc0000',
+        Generic.Strong: '#fff',
         Keyword.Type: '#df077e',
-        Name.Variable: '#99a',
     }

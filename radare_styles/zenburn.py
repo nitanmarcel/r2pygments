@@ -5,22 +5,23 @@ from pygments.token import *
 class R2ZenburnStyle(Style):
     name = 'r2zenburn'
     background_color = "#8dd"
+    highlight_color = "#004"
     styles = {
-        Name.Function: '#d52',
-        Keyword: '#d52',
-        Keyword: '#d52',
-        Keyword: '#d52',
-        Comment: '#7a7',
-        Generic.Emph: '#d50',
+        Text: '#aaa',
         Name.Function: '#d50',
-        Name.Label: '#d50',
-        Number: '#c88',
-        Name.Label: '#aaa',
-        Generic.Prompt: '#d50',
-        Name.Variable: '#8dd',
+        Keyword: '#d22',
+        Comment: '#7a7',
+        Comment.Special: '#d52',
         Generic.Emph: '#ffc',
+        Name.Label: '#aaa',
+        Number: '#c88',
+        Generic.Prompt: '#d50',
+        Name.Variable: '#7a7',
         Name.Constant: '#d50',
-        Name.Variable: '#7a7',
+        Generic: '#aaa',
+        Generic.Inserted: '#aaa',
+        Generic.Deleted: '#d52',
+        Generic.Strong: 'blue',
+        Generic.Traceback: 'red',
         Keyword.Type: '#eec',
-        Name.Variable: '#7a7',
     }

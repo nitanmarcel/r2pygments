@@ -5,22 +5,23 @@ from pygments.token import *
 class R2TwilightStyle(Style):
     name = 'r2twilight'
     background_color = "#ffd"
+    highlight_color = "#004"
     styles = {
-        Name.Function: '#ffd',
-        Keyword: '#ffd',
-        Keyword: '#ffd',
-        Keyword: '#ffd',
-        Comment: '#c64',
-        Generic.Emph: '#446',
+        Text: '#aaa',
         Name.Function: '#c64',
+        Keyword: '#bb7',
+        Comment: '#c64',
+        Comment.Special: '#9b7',
+        Generic.Emph: '#ab7',
         Name.Label: '#788',
         Number: '#aaa',
-        Name.Label: '#788',
         Generic.Prompt: '#788',
-        Name.Variable: '#ca6',
-        Generic.Emph: '#ab7',
+        Name.Variable: '#c64',
         Name.Constant: '#ffd',
-        Name.Variable: '#c64',
+        Generic.Inserted: '#9b7',
+        Generic.Deleted: '#b97',
+        Generic: '#9b7',
+        Generic.Strong: 'blue',
+        Generic.Traceback: 'blue',
         Keyword.Type: '#aa6',
-        Name.Variable: '#c64',
     }

@@ -4,7 +4,7 @@ import argparse
 
 from typing import Dict, Tuple, Any
 from pygments.style import Style
-from pygments.token import Comment, String, Number, Name, Keyword, Generic
+from pygments.token import Comment, String, Number, Name, Keyword, Generic, Text
 
 class R2Style(Style):
     name = "r2style"
@@ -31,7 +31,6 @@ class R2Style(Style):
 
 token_map = {
     "comment": (Comment, "Comment"),
-    "string": (String, "String"),
     "num": (Number, "Number"),
     "offset": (Name.Label, "Name.Label"),
     "call": (Name.Function, "Name.Function"),
@@ -49,7 +48,23 @@ token_map = {
     "prompt": (Generic.Prompt, "Generic.Prompt"),
     "flow": (Generic.Emph, "Generic.Emph"),
     "error": (Generic.Error, "Generic.Error"),
+    "other": (Text, "Text"),
+    "push": (Keyword, "Keyword"),
+    "pop": (Keyword, "Keyword"),
+    "cmp": (Keyword, "Keyword"),
+    "ret": (Keyword, "Keyword"),
+    "trap": (Keyword, "Keyword"),
+    "swi": (Keyword, "Keyword"),
+    "creg": (Name.Variable, "Name.Variable"),
+    "usrcmt": (Comment.Special, "Comment.Special"),
+    "graph.true": (Generic.Inserted, "Generic.Inserted"),
+    "graph.false": (Generic.Deleted, "Generic.Deleted"),
+    "graph.trufae": (Generic, "Generic"),
+    "graph.current": (Generic.Strong, "Generic.Strong"),
+    "graph.traced": (Generic.Traceback, "Generic.Traceback"),
+    "graph.box": (Generic, "Generic"),
 }
+
 
 def key_to_token(key) -> Tuple[str, Any]:
     return token_map.get(key)
@@ -77,6 +92,7 @@ def parse_syntax(syntax) -> Dict[str, str]:
 def generate_pygments_style_dict(r2style: str, name: str) -> Dict[Any, str]:
     styles = parse_syntax(r2style)
     _dict = {"background_color": styles.get("widget.bg", "#000"),
+             "highlight_color": styles.get("linehl", "#000000"),
              "name": f"r2{name}"}
     for k,v in styles.items():
         token = key_to_token(k)
@@ -89,7 +105,8 @@ def generate_pygments_style(r2style: str, name: str) -> Style:
     cls = type(f"R2{name.capitalize()}Style", (Style,), {
         "name": _dict["name"],
         "background_color": _dict["background_color"],
-        "styles": {k: v for k, v in _dict.items() if k not in ["name", "background_color"]}
+        "highlight_color": _dict["highlight_color"],
+        "styles": {k: v for k, v in _dict.items() if k not in ["name", "background_color", "highlight_color"]}
     })
     return cls
 
@@ -140,6 +157,7 @@ from pygments.token import *
 class R2{name_title}Style(Style):
     name = '{name}'
     background_color = "{background_color}"
+    highlight_color = "{highlight_color}"
     styles = {{
 {style_definitions}
     }}
@@ -150,6 +168,7 @@ class R2{name_title}Style(Style):
                 name_title=name.capitalize(),
                 name=style_dict["name"],
                 background_color=style_dict["background_color"],
+                highlight_color=style_dict["highlight_color"],
                 style_definitions="\n".join(style_definitions)
             ))
         
